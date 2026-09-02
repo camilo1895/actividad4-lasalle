@@ -1,0 +1,43 @@
+# ==============================
+# FRONTEND / NEXT.JS
+# ==============================
+
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# Variables de entorno frontend
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# ==============================
+# BACKEND / PYTHON
+# ==============================
+
+backend/.venv/
+backend/venv/
+
+__pycache__/
+*.py[cod]
+
+# Variables de entorno backend
+backend/.env
+
+# ==============================
+# LOGS
+# ==============================
+
+*.log
+
+# ==============================
+# SISTEMA / EDITOR
+# ==============================
+
+.DS_Store
+Thumbs.db
+
+# VS Code opcional
+.vscode/
