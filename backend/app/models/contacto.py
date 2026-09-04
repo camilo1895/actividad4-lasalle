@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, BigInteger, Text, DateTime, ForeignKey
+from sqlalchemy import BigInteger, Column, DateTime, String, Text
 
 from sqlalchemy.sql import func
 
@@ -23,10 +23,9 @@ class Contacto(Base):
         nullable=False
         )
     
-    email = Column(
+    correo = Column(
         String(254),
         nullable=False,
-        unique=True
         )
     
     mensaje = Column(
@@ -34,7 +33,8 @@ class Contacto(Base):
         nullable=False
         )
     
-    fecha_creacion = Column(
+    created_at  = Column(
         DateTime(timezone=True),
-        server_default=func.now()
+        server_default=func.now(),
+        nullable=False,
         )
