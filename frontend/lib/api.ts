@@ -3,14 +3,24 @@ type ApiOptions = {
   body?: unknown;
 };
 
+export class ApiError extends Error {
+  constructor(
+    public readonly status: number,
+    public readonly payload: unknown,
+  ) {
+    super(`La API respondió con HTTP ${status}`);
+    this.name = "ApiError";
+  }
+}
+
 export async function request<T>(
   path: string,
   options: ApiOptions = {},
 ): Promise<T> {
-  const appEnv = process.env.APP_ENV;
+  const appEnv = process.env.NEXT_PUBLIC_APP_ENV;
 
   if (!appEnv) {
-    throw new Error("Falta configurar APP_ENV");
+    throw new Error("Falta configurar NEXT_PUBLIC_APP_ENV");
   }
 
   if (
@@ -22,9 +32,9 @@ export async function request<T>(
   }
 
   const baseUrls = {
-    development: process.env.DEV_NEXT_PUBLIC_API_BASE_URL,
-    test: process.env.TEST_NEXT_PUBLIC_API_BASE_URL,
-    production: process.env.PROD_NEXT_PUBLIC_API_BASE_URL,
+    development: process.env.NEXT_PUBLIC_DEV_API_BASE_URL,
+    test: process.env.NEXT_PUBLIC_TEST_API_BASE_URL,
+    production: process.env.NEXT_PUBLIC_PROD_API_BASE_URL,
   };
 
   const baseUrl = baseUrls[appEnv];
@@ -55,9 +65,11 @@ export async function request<T>(
     signal: AbortSignal.timeout(8000),
   });
 
+  const payload = await response.json().catch(() => null);
+
   if (!response.ok) {
-    throw new Error(`La API respondió con HTTP ${response.status}`);
+    throw new ApiError(response.status, payload);
   }
 
-  return response.json();
+  return payload as T;
 }

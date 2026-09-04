@@ -1,8 +1,8 @@
 import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
-  const env = process.env.APP_ENV;
-  const mostrarBadge = process.env.DEV_NEXT_PUBLIC_SHOW_ENV_BADGE === "true";
+  const env = process.env.NEXT_PUBLIC_APP_ENV;
+  const mostrarBadge = process.env.NEXT_PUBLIC_SHOW_ENV_BADGE === "true";
 
   return (
     <main className="min-h-screen bg-gray-50 flex items-center justify-center px-6 py-10">

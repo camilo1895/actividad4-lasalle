@@ -2,7 +2,8 @@
 
 import { useState, type FormEvent } from "react";
 import type { ContactoForm } from "@/types/contacto";
-import { enviarContacto } from "@/services/contact.service";
+import { ApiError } from "@/lib/api";
+import { enviarContacto } from "@/services/contacto.service";
 
 const LIMITES = {
   nombre: 100,
@@ -77,25 +78,28 @@ export default function ContactForm() {
 
     setEnviando(true);
     try {
-      const resultado = await enviarContacto({
+      await enviarContacto({
         nombre: form.nombre.trim(),
         correo: form.correo.trim(),
         asunto: form.asunto.trim(),
         mensaje: form.mensaje.trim(),
       });
 
-      if (resultado.ok) {
-        setConfirmacion("Mensaje enviado correctamente.");
-        setForm(initialForm);
-      } else if (resultado.status === 422) {
+      setConfirmacion("Mensaje enviado correctamente.");
+      setForm(initialForm);
+      setErrores({});
+    } catch (error) {
+      if (error instanceof ApiError && error.status === 422) {
         setErrorServidor(
           "Revisa los campos: el servidor rechazó los datos enviados.",
         );
+      } else if (error instanceof ApiError) {
+        setErrorServidor(
+          `El servidor respondió con el código ${error.status}.`,
+        );
       } else {
-        setErrorServidor("No fue posible enviar el mensaje. Intenta de nuevo.");
+        setErrorServidor("No fue posible conectar con el servidor.");
       }
-    } catch {
-      setErrorServidor("No fue posible conectar con el servidor.");
     } finally {
       setEnviando(false);
     }
