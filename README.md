@@ -32,3 +32,11 @@ Actividad 4 - Ambientes en el desarrollo de producto de ingeniería de software.
 - Node.js
 - Python 3
 - PostgreSQL
+
+## Instalación del backend
+
+cd backend
+
+python -m venv venv
+
+pip install -r requirements.txt
