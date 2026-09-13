@@ -25,3 +25,10 @@ Actividad 4 - Ambientes en el desarrollo de producto de ingeniería de software.
 - Integrante 1
 - Andres Felipe Rodríguez Martinez
 - Ivan Camilo Guarnizo Cala
+
+## Requisitos previos
+
+- Git
+- Node.js
+- Python 3
+- PostgreSQL
