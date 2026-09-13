@@ -40,6 +40,15 @@ backend/.env
 
 .DS_Store
 Thumbs.db
+.idea/
 
 # VS Code opcional
 .vscode/
+
+# ==============================
+# CACHE / TESTS
+# ==============================
+
+backend/.pytest_cache/
+backend/.coverage
+frontend/.eslintcache
