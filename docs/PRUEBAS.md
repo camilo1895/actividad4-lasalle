@@ -62,13 +62,10 @@ casos de prueba definidos obtienen el resultado esperado.
 
 ## Resultados de la validación final
 
-Esta sección será completada después de integrar todos los cambios en la
-rama `main` y ejecutar los casos de prueba definidos anteriormente.
-
-| ID    | Resultado obtenido     | Estado    |
-| ----- | ---------------------- | --------- |
-| CP-01 | Pendiente de ejecución | Pendiente |
-| CP-02 | Pendiente de ejecución | Pendiente |
-| CP-03 | Pendiente de ejecución | Pendiente |
-| CP-04 | Pendiente de ejecución | Pendiente |
-| CP-05 | Pendiente de ejecución | Pendiente |
+| ID    | Resultado obtenido                                          | Estado   |
+| ----- | ----------------------------------------------------------- | -------- |
+| CP-01 | El formulario cargó correctamente.                          | Aprobado |
+| CP-02 | El formulario procesó correctamente los datos válidos.      | Aprobado |
+| CP-03 | El sistema impidió el envío con campos obligatorios vacíos. | Aprobado |
+| CP-04 | El sistema rechazó el correo con formato inválido.          | Aprobado |
+| CP-05 | El frontend se comunicó correctamente con el backend.       | Aprobado |
