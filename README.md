@@ -86,6 +86,30 @@ python -m pip install -r requirements.txt
 
 uvicorn main:app --reload
 
+## Variables de entorno
+
+El backend requiere variables de entorno para su configuración (conexión
+a la base de datos, entre otras). Estas variables no se incluyen en el
+repositorio por motivos de seguridad.
+
+### 1. Copiar el archivo de ejemplo
+
+```bash
+
+cp backend/.env.example backend/.env
+
+```
+
+### 2. Configurar los valores
+
+Editar `backend/.env` y completar los valores correspondientes al
+ambiente local (host, puerto, nombre de la base de datos, usuario y
+contraseña).
+
+> Nunca subir el archivo `backend/.env` con credenciales reales al
+> repositorio. El archivo `backend/.env.example` solo contiene valores
+> de ejemplo.
+
 ## Instalación del frontend
 
 El frontend del proyecto está desarrollado con Next.js. Para instalar sus
