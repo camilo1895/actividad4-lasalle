@@ -140,7 +140,10 @@ y que el frontend pueda comunicarse con el backend.
 
 ## Pruebas
 
-El procedimiento y los casos de prueba utilizados para validar la
-aplicación se encuentran documentados en:
+El equipo realizará la validación final del proyecto utilizando los
+casos de prueba definidos para verificar el funcionamiento general
+de la aplicación.
+
+La documentación detallada se encuentra en:
 
 `docs/PRUEBAS.md`
