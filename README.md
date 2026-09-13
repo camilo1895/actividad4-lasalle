@@ -140,10 +140,14 @@ y que el frontend pueda comunicarse con el backend.
 
 ## Pruebas
 
-El equipo realizará la validación final del proyecto utilizando los
-casos de prueba definidos para verificar el funcionamiento general
-de la aplicación.
+La validación del Formulario de Contacto La Salle se realiza mediante
+casos de prueba funcionales que permiten comprobar el correcto
+funcionamiento del frontend y su comunicación con el backend.
 
-La documentación detallada se encuentra en:
+El equipo realizará la validación final utilizando los casos de prueba
+definidos para verificar el funcionamiento general de la aplicación.
+
+Los casos de prueba, resultados esperados y el procedimiento de
+validación se encuentran documentados en:
 
 `docs/PRUEBAS.md`
