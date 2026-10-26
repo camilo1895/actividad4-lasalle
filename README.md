@@ -24,7 +24,7 @@ Actividad 4 - Ambientes en el desarrollo de producto de ingeniería de software.
 
 | Integrante                        | Usuario de GitHub  |
 | --------------------------------- | ------------------ |
-| Esteban Alejandro Hernandez Lopez | estebanhernandez04 |
+| Esteban Alejandro Hernandez Lopez | Estebanquito26     |
 | Andres Felipe Rodríguez Martinez  | AndresFRM17        |
 | Ivan Camilo Guarnizo Cala         | camilo1895         |
 
